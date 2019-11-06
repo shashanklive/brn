@@ -12,4 +12,6 @@ pool:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-- upload: $(Build.SourcesDirectory)\**
+- powershell: Write-Host $env:BUILD_BUILDNUMBER
+- powershell: Write-Host $(Build.BuildNumber)
+- upload: $(Build.SourcesDirectory)
